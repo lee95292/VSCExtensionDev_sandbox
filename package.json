@@ -2,7 +2,8 @@
   "name": "vsc-dev-sandbox",
   "displayName": "VSC_dev_sandbox",
   "description": "sandbox of dev",
-  "version": "0.0.1",
+  "version": "0.0.4",
+  "publisher": "marcolee",
   "engines": {
     "vscode": "^1.44.0"
   },
@@ -19,7 +20,35 @@
         "command": "vsc-dev-sandbox.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "configuration test",
+      "properties": {
+        "test.default": {
+          "type": "array",
+          "default": [
+            "text"
+          ],
+          "scope": "resource"
+        },
+        "test.enum": {
+          "type": "string",
+          "default": "enum1",
+          "scope": "resource",
+          "description": "%config.default%",
+          "enum": [
+            "enum1",
+            "enum2",
+            "enum3"
+          ],
+          "enumDescriptions": [
+            "enum1",
+            "enum2",
+            "enum3"
+          ]
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
